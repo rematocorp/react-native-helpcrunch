@@ -47,6 +47,7 @@ RCT_EXPORT_METHOD(init:(NSString *)organization appId:(NSString *)applicationId 
 
 RCT_EXPORT_METHOD(updateUser:(NSDictionary *)user resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
 {
+    NSLog(@"updateUser%@", user);
     NSString *userId = [RCTConvert NSString:user[@"userId"]];
     NSString *userName = [RCTConvert NSString:user[@"userName"]];
     NSString *userEmail = [RCTConvert NSString:user[@"userEmail"]];
@@ -59,6 +60,7 @@ RCT_EXPORT_METHOD(updateUser:(NSDictionary *)user resolver:(RCTPromiseResolveBlo
         helpcrunchUser.customData = [user objectForKey:@"customData"];
     }
     [HelpCrunch updateUser:helpcrunchUser completion:^(NSError * _Nullable error) {
+        NSLog(@"updateUser complete%@", error);
         resolve(nil);
     }];
 }
