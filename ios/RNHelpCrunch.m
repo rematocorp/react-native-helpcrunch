@@ -37,12 +37,24 @@ RCT_EXPORT_METHOD(init:(NSString *)organization appId:(NSString *)applicationId 
             reject([@(error.code) stringValue], @"Error while trying to initialise HelpCrunch.", error);
         }
 
+        /*
         if (registerForNotifications) {
             [HelpCrunch registerForRemoteNotifications];
         }
+        */
 
         resolve(nil);
     }];
+}
+
+RCT_EXPORT_METHOD(registerForNotifications)
+{
+    [HelpCrunch registerForRemoteNotifications];
+}
+
+RCT_EXPORT_METHOD(setDeviceToken:(NSString *)deviceToken)
+{
+    [HelpCrunch setDeviceToken:deviceToken];
 }
 
 RCT_EXPORT_METHOD(updateUser:(NSDictionary *)user resolver:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)

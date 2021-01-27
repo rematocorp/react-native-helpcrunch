@@ -26,6 +26,16 @@ export default class HelpCrunch {
       : RNHelpCrunch.init(organization, applicationId, applicationSecret, preChatFields, packageName);
   }
 
+  static registerForNotifications() {
+    RNHelpCrunch.registerForNotifications();
+    return;
+  }
+
+  static setDeviceToken(deviceToken) {
+    RNHelpCrunch.setDeviceToken(deviceToken);
+    return;
+  }
+
   static updateUser({ userId, userName, userEmail, customData }) {
     return RNHelpCrunch.updateUser({ userId, userName, userEmail, customData });
   }
