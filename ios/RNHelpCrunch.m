@@ -12,17 +12,7 @@ RCT_EXPORT_METHOD(init:(NSString *)organization appId:(NSString *)applicationId 
         NSMutableArray *preChatConfig = [[NSMutableArray alloc] init];
         for (NSString *key in preChatFields) {
             BOOL isRequired = preChatFields[key][@"isRequired"];
-            if ([key isEqualToString:@"name"]) {
-                [preChatConfig addObject:[HCSUserAttribute nameAttributeAsRequired:isRequired]];
-            }else if ([key isEqualToString:@"email"]) {
-                [preChatConfig addObject:[HCSUserAttribute emailAttributeAsRequired:isRequired]];
-            } else if ([key isEqualToString:@"company"]) {
-                [preChatConfig addObject:[HCSUserAttribute companyAttributeAsRequired:isRequired]];
-            } else if ([key isEqualToString:@"phone"]) {
-                [preChatConfig addObject:[HCSUserAttribute phoneAttributeAsRequired:isRequired]];
-            } else {
-                [preChatConfig addObject:[[HCSUserAttribute alloc] initWithAttributeName:key placeholder:preChatFields[key][@"placeholder"] required:isRequired]];
-            }
+            [preChatConfig addObject:[[HCSUserAttribute alloc] initWithAttributeName:key placeholder:preChatFields[key][@"placeholder"] required:isRequired]];
         }
         configuration.userAttributes = preChatConfig;
     }
