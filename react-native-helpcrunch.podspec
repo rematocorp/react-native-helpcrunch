@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.static_framework = true
 
   s.dependency 'React-Core'
-  s.dependency 'HelpCrunchSDK', '~> 3.2.3'
+  s.dependency 'HelpCrunchSDK', '~> 4.1.3'
 end
