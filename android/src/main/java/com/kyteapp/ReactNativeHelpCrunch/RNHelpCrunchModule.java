@@ -391,7 +391,7 @@ public class RNHelpCrunchModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void getNumberOfUnreadMessages(final Promise promise) {
-        HelpCrunch.getUnreadMessagesCount(new Callback<Integer>() {
+        HelpCrunch.getUnreadChatsCount(new Callback<Integer>() {
             @Override
             public void onError(@NotNull String message) {
                 promise.reject("GetUnreadMessagesCountError", message);

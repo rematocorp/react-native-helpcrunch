@@ -45,7 +45,7 @@ public class HelpCrunchEventManager extends BroadcastReceiver {
                 eventEmmiter.emit("HCSURLNotification", null);
                 break;
             case ON_UNREAD_COUNT_CHANGED:
-                HelpCrunch.getUnreadMessagesCount(new Callback<Integer>() {
+                HelpCrunch.getUnreadChatsCount(new Callback<Integer>() {
                     @Override
                     public void onError(@NotNull String message) {
                     }
