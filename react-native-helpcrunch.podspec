@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
   s.static_framework = true
   s.libraries    = 'sqlite3', 'c++'
   s.dependency 'React-Core'
-  s.dependency 'HelpCrunchSDK', '~> 4.1.3'
+  s.dependency 'HelpCrunchSDK', '~> 4.3.0'
 end
