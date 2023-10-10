@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source       = { git: 'https://github.com/maxbsoft/react-native-helpcrunch.git', tag: "v#{s.version}" }
   s.source_files = 'ios/*.{h,m,swift}'
   s.static_framework = true
-
+  s.libraries    = 'sqlite3', 'c++'
   s.dependency 'React-Core'
   s.dependency 'HelpCrunchSDK', '~> 4.1.3'
 end
